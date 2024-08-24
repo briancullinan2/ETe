@@ -194,7 +194,7 @@ jobs:
       with:
         name: macos-${{ matrix.arch }}
         path: |
-          bin/ete*.${{ matrix.arch }}
+          bin/ete*.x86_64
           bin/*_mac
         if-no-files-found: error
         retention-days: 5
@@ -261,6 +261,8 @@ jobs:
           sha1sum ./windows-x64/ETe-vulkan.x64.exe > ETe-vulkan.x64.exe.sha1
           md5sum ./macos-x86_64/ete.x86_64 > ete_mac.x86_64.md5
           sha1sum ./macos-x86_64/ete.x86_64 > ete_mac.x86_64.sha1
+          md5sum ./macos-aarch64/ete.x86_64 > ete_mac.aarch64.md5
+          sha1sum ./macos-aarch64/ete.x86_64 > ete_mac.aarch64.sha1
           7z a -r ete-client-hashes.zip *.md5 *.sha1
 
 #TODO other builds
